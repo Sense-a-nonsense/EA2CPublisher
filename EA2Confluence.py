@@ -23,7 +23,7 @@ for document in user_documents:
     page.title = document.title
     eapb.search_for_page(settings, page)
 
-    ## Prepare page for publication
+    ## Prepare pagefor publication
     page.version += 1
     page.body = document.body
     page.embedd_img(document)
