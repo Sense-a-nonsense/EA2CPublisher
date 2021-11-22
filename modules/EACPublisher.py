@@ -98,4 +98,5 @@ def create_page(settings: eas.UserSettings, newPage: Page, parentPage: Page):
             }
         }
     )
+
     return request

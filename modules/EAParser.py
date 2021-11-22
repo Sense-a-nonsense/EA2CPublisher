@@ -33,7 +33,7 @@ def get_documents (settings: eas.UserSettings):
     documents = []
 
     #Parse file for root id and name
-    with open(settings.publish_path + '\\js\\data\\' + 'root.xml') as file:
+    with open(settings.publish_path + '\\js\\data\\' + 'root.xml', encoding='utf-8') as file:
         for line in file:
             splitline = line.lstrip('tocTab[tocTab.length] = new Array(').rstrip(');').split(', ')
             root_id = splitline[7].strip('"\{\}')
@@ -43,7 +43,7 @@ def get_documents (settings: eas.UserSettings):
 
     #Parse root file for couments id's,  names, parents
     toc_ids =  {'0': settings.req_root}
-    with open(settings.publish_path + '\\js\\data\\' + root_id + '.xml') as file:
+    with open(settings.publish_path + '\\js\\data\\' + root_id + '.xml', encoding='utf-8') as file:
         for line in file:
             splitline = line.lstrip('tocTab[tocTab.length] = new Array(').rstrip(');').split(',')
             if splitline[8] == ' "Artifact0"':

@@ -12,7 +12,7 @@ class UserSettings(object):
     # Read user settings from config file
     def load(self):
         settings = dict()
-        with open(os.path.dirname(__file__) + '/../settings.cfg') as settings_file:
+        with open(os.path.dirname(__file__) + '/../settings.cfg', encoding='utf-8') as settings_file:
             for line in settings_file:
                 setting = line.split(':', 1)
                 settings[setting[0].strip(' ')] = setting[1].strip(' \n')
